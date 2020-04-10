@@ -1,0 +1,38 @@
+{
+  "name": "rambutan",
+  "version": "1.0.0",
+  "description": "Vertical slide control",
+  "main": "example.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatpixelstudio/Rambutan.git"
+  },
+  "keywords": [
+    "javascript",
+    "control",
+    "slider",
+    "range"
+  ],
+  "author": "Marijn Tijhuis",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/fatpixelstudio/Rambutan/issues"
+  },
+  "homepage": "https://github.com/fatpixelstudio/Rambutan#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "jshint": "^2.11.0",
+    "jshint-stylish": "^2.2.1"
+  }
+}

@@ -182,8 +182,9 @@ function debounce(func, wait, immediate) {
 		},
 
 		setWrapperDimensions: function () {
-			this.wrapper.style.height = getParentDimensions(this.wrapper).width + 'px';
-			this.wrapper.style.width = getParentDimensions(this.wrapper).height + 'px';
+			this.wrapper.style.width = getParentDimensions(this.wrapper).width + 'px';
+			this.wrapper.style.height = getParentDimensions(this.wrapper).height + 'px';
+			console.log(this.wrapper.style.width);
 		},
 
 		_prepare: function () {

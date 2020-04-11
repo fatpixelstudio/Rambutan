@@ -1,10 +1,18 @@
+* {
+  box-sizing: border-box; }
+
 html {
-  background-color: #faeee7; }
+  background-color: #faeee7;
+  margin: 0;
+  padding: 0; }
 
 body {
+  position: relative;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  color: #594a4e; }
+  color: #594a4e;
+  margin: 0;
+  padding: 1em; }
 
 .rambutan-parent {
   display: block;
@@ -42,9 +50,6 @@ body {
   height: 100%;
   background-color: #ffc6c7; }
 
-.rambutan__button {
-  background-color: #c3f0ca; }
-
 .rambutan-slider {
   position: relative;
   width: 100%;
@@ -69,15 +74,17 @@ body {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  background-color: currentColor; }
+  background-color: #33272a; }
 
 .rambutan-controller {
   position: relative;
   margin: auto;
-  top: -3px;
+  top: -10px;
   bottom: 0;
-  height: 9px;
-  width: 100px;
+  height: 20px;
+  width: 80px;
+  border-radius: 4px;
   margin-left: auto;
   margin-right: auto;
-  background-color: currentColor; }
+  background-color: #c3f0ca;
+  border: 2px solid #33272a; }

@@ -140,6 +140,10 @@
 		setWrapperDimensions: function () {
 			this.wrapper.style.width = getParentDimensions(this.wrapper).width + 'px';
 			this.wrapper.style.height = getParentDimensions(this.wrapper).height + 'px';
+			this.elBg.style.height = getParentDimensions(this.wrapper).height + 'px';
+			this.elBg.style.width = getParentDimensions(this.wrapper).width + 'px';
+			this.elFg.style.height = getParentDimensions(this.wrapper).height + 'px';
+			this.elFg.style.width = getParentDimensions(this.wrapper).width + 'px';
 		},
 
 		_prepare: function () {

@@ -32,57 +32,6 @@
 	};
 })(Window.prototype, HTMLDocument.prototype, Element.prototype, "addEventListener", "removeEventListener", "dispatchEvent", []);
 
-// /**
-//  * Debounce functions for better performance
-//  * (c) 2018 Chris Ferdinandi, MIT License, https://gomakethings.com
-//  * @param  {Function} fn The function to debounce
-//  */
-// var debounce = function (fn) {
-
-// 	// Setup a timer
-// 	var timeout;
-
-// 	// Return a function to run debounced
-// 	return function () {
-
-// 		// Setup the arguments
-// 		var context = this;
-// 		var args = arguments;
-
-// 		// If there's a timer, cancel it
-// 		if (timeout) {
-// 			window.cancelAnimationFrame(timeout);
-// 		}
-
-// 		// Setup the new requestAnimationFrame()
-// 		timeout = window.requestAnimationFrame(function () {
-// 			fn.apply(context, args);
-// 		});
-
-// 	}
-
-// };
-
-// Returns a function, that, as long as it continues to be invoked, will not
-// be triggered. The function will be called after it stops being called for
-// N milliseconds. If `immediate` is passed, trigger the function on the
-// leading edge, instead of the trailing.
-function debounce(func, wait, immediate) {
-	var timeout;
-	return function () {
-		var context = this,
-			args = arguments;
-		var later = function () {
-			timeout = null;
-			if (!immediate) func.apply(context, args);
-		};
-		var callNow = immediate && !timeout;
-		clearTimeout(timeout);
-		timeout = setTimeout(later, wait);
-		if (callNow) func.apply(context, args);
-	};
-};
-
 (function (document, window) {
 	console.log('lets peel');
 
@@ -135,7 +84,8 @@ function debounce(func, wait, immediate) {
 		this.options = { // new options must have default values set here.
 			startingPosition: '50%',
 			animate: true,
-			callback: null // pass a callback function if you like
+			callbackOnInit: null, // pass a callback function on init of the slider
+			callbackOnUpdate: null // pass a callback function on every update of the slider value
 		};
 
 		for (i in this.options) {
@@ -178,6 +128,13 @@ function debounce(func, wait, immediate) {
 				this.elBackground.style.height = startPercent;
 				this.elForeground.style.height = endPercent;
 				this.sliderPosition = startPercent;
+
+				// Execute a callback if there is one set
+				// Simple functions should work ok
+				// Please: remember to debounce if you are about to do something resource-intensive
+				if (this.options.callbackOnUpdate && typeof (this.options.callbackOnUpdate) === 'function') {
+					this.options.callbackOnUpdate(this);
+				}
 			}
 		},
 
@@ -324,8 +281,8 @@ function debounce(func, wait, immediate) {
 
 			rambutan.sliders.push(this);
 
-			if (this.options.callback && typeof (this.options.callback) === 'function') {
-				this.options.callback(this);
+			if (this.options.callbackOnInit && typeof (this.options.callbackOnInit) === 'function') {
+				this.options.callbackOnInit(this);
 			}
 		}
 	};

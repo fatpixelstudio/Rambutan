@@ -50,7 +50,8 @@
 		this.options = { // new options must have default values set here.
 			startingPosition: '50%',
 			animate: true,
-			callback: null // pass a callback function if you like
+			callbackOnInit: null, // pass a callback function on init of the slider
+			callbackOnUpdate: null // pass a callback function on every update of the slider value
 		};
 
 		for (i in this.options) {
@@ -93,6 +94,13 @@
 				this.elBackground.style.height = startPercent;
 				this.elForeground.style.height = endPercent;
 				this.sliderPosition = startPercent;
+
+				// Execute a callback if there is one set
+				// Simple functions should work ok
+				// Please: remember to debounce if you are about to do something resource-intensive
+				if (this.options.callbackOnUpdate && typeof (this.options.callbackOnUpdate) === 'function') {
+					this.options.callbackOnUpdate(this);
+				}
 			}
 		},
 
@@ -239,8 +247,8 @@
 
 			rambutan.sliders.push(this);
 
-			if (this.options.callback && typeof (this.options.callback) === 'function') {
-				this.options.callback(this);
+			if (this.options.callbackOnInit && typeof (this.options.callbackOnInit) === 'function') {
+				this.options.callbackOnInit(this);
 			}
 		}
 	};

@@ -29,7 +29,8 @@ slider = new rambutan.rambutanslider('#myrambutanslider',
         callbackOnUpdate: null
     });
 slider._prepare();
-</script>```
+</script>
+```
 
 ## Callbacks
 
@@ -54,6 +55,6 @@ This vertical slider is heavily inspired by: [Juxtapose](https://github.com/NUKn
 
 Color scheme used in examle by the lovely [Happy Hues](https://www.happyhues.co).
 
-(## Licence)
+(## License)
 
 Mozilla Public License Version 2.0 (MPL-2.0)

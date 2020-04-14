@@ -40,7 +40,8 @@ body {
   bottom: 0;
   width: 100%;
   height: 100%;
-  background-color: #ff8ba7; }
+  background-color: #ff8ba7;
+  color: #fff; }
 
 .rambutan-background {
   position: absolute;
@@ -48,7 +49,8 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffc6c7; }
+  background-color: #ffc6c7;
+  color: #594a4e; }
 
 .rambutan-slider {
   position: relative;

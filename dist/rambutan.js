@@ -33,7 +33,6 @@
 })(Window.prototype, HTMLDocument.prototype, Element.prototype, "addEventListener", "removeEventListener", "dispatchEvent", []);
 
 (function (document, window) {
-	console.log('lets peel');
 
 	var rambutan = {
 		sliders: []
@@ -141,7 +140,6 @@
 		setWrapperDimensions: function () {
 			this.wrapper.style.width = getParentDimensions(this.wrapper).width + 'px';
 			this.wrapper.style.height = getParentDimensions(this.wrapper).height + 'px';
-			console.log(this.wrapper.style.width);
 		},
 
 		_prepare: function () {
@@ -186,7 +184,6 @@
 		},
 
 		_init: function () {
-			console.log('init slider');
 
 			this.updateSlider(this.options.startingPosition, false);
 

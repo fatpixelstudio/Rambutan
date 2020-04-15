@@ -14,6 +14,14 @@ body {
   margin: 0;
   padding: 1em; }
 
+a {
+  text-decoration: underline;
+  color: #33272a; }
+  a:hover, a:active {
+    color: #ff8ba7; }
+  a:visited {
+    color: #594a4e; }
+
 .rambutan-parent {
   display: block;
   width: 100%;

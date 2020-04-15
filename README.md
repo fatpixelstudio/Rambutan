@@ -2,6 +2,8 @@
 
 Rambutan is a vertical slide control. Minimal styling, minimal options. Rambutan automatically resizes to the dimensions of the parent element (see the styling).
 
+Check out the [live example](http://dev.fatpixel.nl/rambutan/)!
+
 The contents of the background (or before) and foreground (or after) can be images, backgrounds, colors or HTML elements.
 
 Rambutan is not really a plug-n-play script. It will need a little bit of tweaking of the styling. And it assumes you know what you are doing script-wise. But if that won't hold you back: feel free to use it (see the [License](#license) for usage).
@@ -54,6 +56,10 @@ This vertical slider is heavily inspired by: [Juxtapose](https://github.com/NUKn
 ### Colors
 
 Color scheme used in examle by the lovely [Happy Hues](https://www.happyhues.co).
+
+## Naming
+
+So, why the silly name? Because I'm naming all my open-source projects after ingredients from the South-east Asian kitchen.
 
 ## License
 

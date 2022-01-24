@@ -1,11 +1,12 @@
 "use strict";
 
 var gulp = require('gulp');
-var sass = require('gulp-sass');
 var notify = require('gulp-notify');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var jshint = require('gulp-jshint');
+
+const sass = require('gulp-sass')(require('sass'));
 
 gulp.task('styles', function () {
 	return gulp.src('src/scss/main.scss')
